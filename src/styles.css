@@ -34,6 +34,18 @@ header {
   padding: 0 0.5rem;
 }
 
+.footer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-icon {
+  padding: .25rem;
+  margin: .75rem;
+  resize: 3rem;
+}
+
 .navbar {
   height: 3rem;
   max-width: auto;
