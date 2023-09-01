@@ -16,8 +16,32 @@ body {
   margin: 0 4rem 4rem 4rem; 
 }
 
+p {
+  padding: 1rem 0 1rem 0;
+}
+
 li {
   list-style: none;
+}
+
+.list-item {
+  list-style: circle;
+}
+
+h1 {
+  padding: 0 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  padding: 2rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
+  padding: 0.25rem 0 0.25rem 0;
 }
 
 a {
