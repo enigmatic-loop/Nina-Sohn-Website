@@ -13,7 +13,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  margin: 0 4rem 4rem 4rem; 
+  margin: 0 9rem 4rem 9rem; 
 }
 
 p {
@@ -26,6 +26,7 @@ li {
 
 .list-item {
   list-style: circle;
+  padding: 0.30rem;
 }
 
 h1 {
@@ -65,10 +66,24 @@ header {
 }
 
 .footer-icon {
-  padding: .25rem;
-  margin: .75rem;
-  resize: 3rem;
+  margin: 0.75rem;
+  background-color: #1561a3;
+  border-radius: 5rem;
+  padding: 1rem;
+  animation: animate 3s linear infinite;
+  text-shadow: 0 0 1rem #0072ff, 0 0 1rem #0072ff, 0 0 1rem #0072ff, 0 0 1rem #0072ff;
+  animation-delay: .11s;
 }
+
+@keyframes animate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
 
 .navbar {
   height: 3rem;
@@ -108,7 +123,7 @@ header {
 }
 
 .drop-down.open {
-  height: 10rem;
+  height: 8rem;
 }
 
 .drop-down li {
@@ -132,6 +147,10 @@ header {
 
   .drop-down {
     display: block;
+  }
+
+  body {
+    margin: 0 3rem 4rem 3rem; 
   }
 }
 
@@ -184,4 +203,8 @@ header {
 
 .underline {
   text-decoration: underline;
+}
+
+.technology {
+  text-align: center;
 }

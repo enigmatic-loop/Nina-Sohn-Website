@@ -13,7 +13,6 @@
     <header>
       <div class="navbar">
         <ul class="links">
-          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -24,10 +23,9 @@
       </div>
 
       <div class="drop-down">
-        <li><a href="home">Home</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="portfolio">Portfolio</a></li>
-        <li><a href="contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
       </div>
     </header>
 
@@ -44,15 +42,15 @@
     </script>
 
     <section class="about">
-      <h1>Nina Sohn - Software Development Engineer</h1>
-      <h3>Hi, there! Nina here.</h3>
+      <h1>Nina Sohn - Software Engineer and Adventure Enthusiast</h1>
+      <h3 id="about">Hi, there! Nina here.</h3>
       <p>
-        I recently finished an internship as an SDE Intern with AWS at Amazon. I'm extremely passionate about learning, teaching, and helping others. Want an example?
+        I recently finished an internship as an SDE Intern at Amazon (AWS). I'm extremely passionate about learning, teaching, and helping others. Want an example?
         I taught myself how to change my car's oil, transmission oil, cabin and engine air filters, spark plugs, alternator, starter, brake
-        pads and rotors, brake fluid, and battery. Yeah.. my car was crappy but I learned a lot from it! One day my old housemate had a friend
-        over. They hung out and then he went to his car to leave. Guess what. It didn't start. My housemate called me, I did some diagnosing
-        and determined it was the starter. We headed over to Autozone, arrived right before they closed, and got the starter. I helped him
-        to replace it and taught him along the way. His car started up and he happily headed home.
+        pads and rotors, brake fluid, and battery. Yeah... my car was crappy but I learned a lot from it! One day my old housemate had a friend
+        over. When he went to his car to leave, guess what. It didn't start. My housemate called me, I did some diagnosing
+        and determined it was the starter. We headed over to Autozone, arrived right before they closed, and got the starter. I taught him how
+        to safely replace it and his car started up. He happily drove home.
       </p>
       <p>
         I used to teach kids chess, swim, and parkour however I wanted to learn how to code for some time. I purchased a Python course on Udemy,
@@ -66,63 +64,78 @@
       </p>
       <ul>
         <li class="list-item">
-          I integrated AWS AppConfig with an internal service which auto remediates configurations reducing deployment
-          time for hardcoded data from weeks to just a few hours.
+          I re-architected an internal legacy application in Typescript by separating configurations into <a class="underline" href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html" target="_blank"> AWS AppConfig</a> 
+          from business logic in <a class="underline" href="https://aws.amazon.com/lambda/" target="_blank">AWS Lambda</a> which reduced deployment time for configuration 
+          changes from 1 week to 1 day. I wrote unit tests with 100% coverage for these changes using <a class="underline" href="https://jestjs.io/" target="_blank">Jest</a>.
         </li>
         <li class="list-item">
-          I added local deployment to our team's AWS AppConfig repository making it fast
-          and easy to deploy locally for testing. Previously, it was a manual process which involved copying and pasting code then removing it before
-          putting up a code review. Now we can easily put in a few commands in the CLI.
+          I added local deployment functionality using Typescript allowing teammates to easily deploy local changes to personal accounts through the command line for 
+          testing configuration changes in JSON.
         </li>
         <li class="list-item">
           I onboarded the auto remediation internal service to a new region, improving reliability and accessibility. The service can now be 
           used, tested, and maintained in this new region.
         </li>
         <li class="list-item">
-          I created a service specific account creation pipeline based off a teammates generic account creation pipeline. Which automates AWS account 
-          creation with the team's metadata, permissions, account type, and email associated with that account.
+          I created a service specific account creation <a class="underline" href="https://aws.amazon.com/cdk/" target="_blank">AWS CDK</a> pipeline in Typescript based off a teammates generic account creation pipeline which automates 
+          AWS account creation with the team's metadata, permissions, account type, and email associated with that account.
         </li>
         <li class="list-item">
-          I wrote an onboarding script to automate adding account configurations if the account belonged to a specific service. The script would query
-          an internal API to see if the configurations already existed, if not the script would create them.
+          I improved our service’s CI/CD pipeline operations by increasing reliability of integration tests in Java and adding service metrics for when the auto remediation 
+          service successfully creates an <a class="underline" href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_OpsItem.html" target="_blank">OpsItem</a>, 
+          resolves an OpsItem, and the rate at which integration tests pass and fail for the service to the operational dashboard 
+          using <a class="underline" href="https://aws.amazon.com/cloudwatch/" target="_blank">AWS CloudWatch</a>, Typescript, and Markdown files.
         </li>
         <li class="list-item">
-          Using the account creation pipeline and script, I swiftly created 20 pre-production accounts. One for each production region for a 1:1 mapping 
-          and onboarded our service so that we can accurately test in those regions before releasing changes to production.
+          I wrote a Typescript script that automated adding configurations to newly created accounts by querying an API to see if they already existed, otherwise writing them into the database.
         </li>
         <li class="list-item">
-          I added important service metrics to my team's operational dashboard to view when the auto remediation service successfully creates
-          an OpsItem, resolves an OpsItem, and the rate at which integration tests pass and fail for the service.
+          Using the account creation pipeline and script, I swiftly created 20 pre-production accounts for a 1:1 mapping with each production region. I onboarded our services 
+          and its dependencies to those accounts so that we can accurately test in those regions before releasing changes to production.
         </li>
+        <li class="list-item">
+          I prevented our source queue from overflowing and reduced unnecessary on-call paging by updating our service’s workflow to send unresolved data to a temporary dead-letter queue using <a class="underline" href="https://aws.amazon.com/sqs/" target="_blank">AWS SQS</a>.
+        </li>
+        <br>
+        <li><a class="underline" href="https://www.linkedin.com/in/nina-sohn/" target="_blank">Check out recommendations from my manager and mentor on LinkedIn</a> &#40;scroll to bottom of my page&#41;</li>
       </ul>
     </section>
 
     <section class="portfolio">
-      <h2>Portfolio</h2>
+      <h2 id="portfolio">Projects</h2>
       <div class="portfolio-container" id="media-screen">
         <h4 class="project-title">Skill Swap</h4>
         <p class="project-description"> A skill trading web application where users can share knowledge with the world, in exchange for knowledge from others. Users can create an 
             account by logging in using their google email login, using the built-in Google Login API &#40;profile information such as name, email, and 
             user icons are pulled from the user's google login&#41;. Users may add skills to their profile, complete with descriptions, and expected time commitments for instruction. They can search 
             by username or skill name in the provided search bar and click on a result to go to a user's page. And finally, users may initiate skill 
-            swaps with each other and trade knowledge! <br><a class="underline" href="https://github.com/enigmatic-loop/front-end-skillswap" target="_blank">View on Github.</a> 
+            swaps with each other and trade knowledge! 
+            <br> 
+            <br> 
+            Tech stack: <br> 
+            Front-end - React/JS using Material UI and SASS frameworks <br> 
+            Back-end -  Python/Flask/PostgresSQL <br> 
+            Outside API - Google Login API <br> 
+            <br>
+            <br>
+            <a class="underline" href="https://github.com/enigmatic-loop/front-end-skillswap" target="_blank">View on Github.</a> 
         </p>
         <img class="skillswap-pic" src="images/SkillSwap_Cover.png" alt="Photo of SkillSwap user page with pop up to add skill"/>
       </div>
     </section>
 
-    <section>
-      <h2>Technology</h2>
+    <section class="technology">
+      <h2>My Skills</h2>
       <ul>
-        <li>Programming Languages: Python, SQL, HTML/CSS, Javascript, Typescript</li>
-        <li>Frameworks: React, Flask</li>
+        <li>Programming Languages: Python, HTML/CSS, Javascript, Typescript, React</li>
+        <li>Frameworks: Flask, Node.js</li>
         <li>Version Control: Git</li>
-        <li>Databases: SQL, Postgres</li>
+        <li>Databases: SQL, PostgreSQL</li>
         <li>Testing: PyTest, Jest</li>
       </ul>
     </section>
 
-    <footer class="footer">
+    <footer id="contact" class="footer">
       <a href="https://www.linkedin.com/in/nina-sohn/"><i class="footer-icon fa-brands fa-linkedin fa-xl"></i></a>
       <a href="https://github.com/enigmatic-loop"><i class="footer-icon fa-brands fa-github fa-xl"></i></a>
       <a href="mailto: nina.sohn@gmail.com"><i class="footer-icon fa-solid fa-envelope fa-xl"></i></a>
